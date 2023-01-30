@@ -1,3 +1,4 @@
+require("dotenv").config();
 require('./models/User')
 const express = require('express')
 const mongoose = require('mongoose')
@@ -9,7 +10,7 @@ const app = express();
 app.use(bodyParser.json())
 app.use(authRoutes)
 
-const mongoUri = 'mongodb+srv://rfladmin:103224271@cluster0.3vyxnbf.mongodb.net/?retryWrites=true&w=majority'
+const mongoUri = process.env.MONGO_BASE_URL
 mongoose.connect(mongoUri)
 mongoose.connection.on('connected', () => {
   console.log('Connected to mongo instance');
