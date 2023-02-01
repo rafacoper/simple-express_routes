@@ -11,7 +11,6 @@ const pointSchema = new mongoose.Schema({
     speed: Number,
   },
 })
-
 const trackSchema = new mongoose.Schema({
   userId: {
     type: mongoose.Schema.Types.ObjectId,
@@ -23,20 +22,5 @@ const trackSchema = new mongoose.Schema({
   },
   locations: [pointSchema],
 })
-
-// const mock = {   
-//   "name": "First One",
-//   "locations": {
-//       "timestamp": 1000,
-//       "coords": {
-//           "latitude": 100,
-//           "longitude": 100,
-//           "altitude": 100,
-//           "accuracy": 100,
-//           "heading": 100,
-//           "speed": 100,
-//       }
-//   }
-// }
 
 mongoose.model("Track", trackSchema)
